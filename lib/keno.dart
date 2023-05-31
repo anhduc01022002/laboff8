@@ -23,7 +23,7 @@ class KenoStatistics extends StatelessWidget {
     Keno('Chẵn',2),
   ];
 
-  final int maxCount = 5; // Here we take 5 as the maxCount
+  final int maxCount = 5;
 
   @override
   Widget build(BuildContext context) {
