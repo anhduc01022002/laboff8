@@ -158,14 +158,14 @@ class _MyAppState extends State<MyApp> {
                             borderRadius: BorderRadius.circular(0),
                             children: <Widget>[
                               Padding(
-                                padding: EdgeInsets.all(10.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Text(
                                   'Nam',
                                   style: TextStyle(fontSize: 16),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(10.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Text(
                                   'Nữ',
                                   style: TextStyle(fontSize: 16),
