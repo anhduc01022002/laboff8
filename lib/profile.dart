@@ -84,6 +84,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text("Thông tin cá nhân"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -95,7 +109,7 @@ class _MyAppState extends State<MyApp> {
               isUpload: true,
             ),
             SizedBox(height: 10),
-            Text('0374016270',style: TextStyle(fontSize: 20)),
+            Text('0374016270',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             Align(
               alignment: Alignment.centerLeft,
               child: Text('Họ & tên', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
@@ -104,10 +118,10 @@ class _MyAppState extends State<MyApp> {
             TextField(
               decoration: InputDecoration(
                 labelText: 'Nhập họ và tên',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0),),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             IntrinsicHeight(
               child: Row(
                 children: [
@@ -126,7 +140,7 @@ class _MyAppState extends State<MyApp> {
                           controller: dateController,
                           decoration: InputDecoration(
                             labelText: 'Nhập ngày sinh',
-                            border: OutlineInputBorder(),
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0),),
                             suffixIcon: IconButton(
                               icon: Image.asset('assets/ic_calendar.png'),
                               onPressed: () => _selectDate(context),
@@ -155,7 +169,7 @@ class _MyAppState extends State<MyApp> {
                             borderWidth: 2,
                             selectedBorderColor: Colors.black,
                             selectedColor: Colors.white,
-                            borderRadius: BorderRadius.circular(0),
+                            borderRadius: BorderRadius.circular(15),
                             children: <Widget>[
                               Padding(
                                 padding: EdgeInsets.all(12.0),
@@ -188,7 +202,7 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Align(
               alignment: Alignment.centerLeft,
               child: Text('Email (không bắt buộc)', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
@@ -198,10 +212,10 @@ class _MyAppState extends State<MyApp> {
               maxLength: 100,
               decoration: InputDecoration(
                 labelText: 'Nhập Email',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0),),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 0),
             Align(
               alignment: Alignment.centerLeft,
               child: Text('Địa chỉ', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
@@ -211,16 +225,19 @@ class _MyAppState extends State<MyApp> {
               maxLength: 100,
               decoration: InputDecoration(
                 labelText: 'Nhập địa chỉ',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0),),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 25),
             Container(
               height: 50,
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
+                    primary: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    )
                 ),
                 onPressed: () {},
                 child: Text('Lưu thay đổi', style: TextStyle(fontSize: 14)),
